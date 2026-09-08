@@ -4,6 +4,13 @@
 """
 import os, sys, json, urllib.request, urllib.error
 
+if sys.platform == "win32":
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 BASE_URL = "https://ima.qq.com/openapi/wiki/v1"
 
 def get_config():
